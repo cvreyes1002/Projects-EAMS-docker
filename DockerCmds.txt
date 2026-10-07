@@ -1,0 +1,11 @@
+# Check the configuration syntax is valid
+docker compose config
+
+# Build the image and start containers
+docker compose up -d --build
+
+docker compose exec backend python manage.py createsuperuser
+
+docker compose exec backend python manage.py makemigrations
+
+docker compose exec backend python manage.py migrate
